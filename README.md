@@ -40,3 +40,59 @@ phrasegen --join-str "-" \
     --lowercase \
     -o gen.txt
 ```
+
+Generating from a given string via CLI directly and/or outputting to STDOUT is also possible:
+
+```bash
+phrasegen --join-str "-" \
+    --input "This is a sentence I'd like to use to generate a set of passphrases against." \
+    --max-size 3 \
+    --no-strip-punc \
+    --lowercase
+```
+Outputs to STDOUT:
+
+```text
+this
+is
+a
+sentence
+i'd
+like
+to
+use
+to
+generate
+a
+set
+of
+passphrases
+against.
+this-is
+is-a
+a-sentence
+sentence-i'd
+i'd-like
+like-to
+to-use
+use-to
+to-generate
+generate-a
+a-set
+set-of
+of-passphrases
+passphrases-against.
+this-is-a
+is-a-sentence
+a-sentence-i'd
+sentence-i'd-like
+i'd-like-to
+like-to-use
+to-use-to
+use-to-generate
+to-generate-a
+generate-a-set
+a-set-of
+set-of-passphrases
+of-passphrases-against.
+```
