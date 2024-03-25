@@ -9,10 +9,10 @@ include = [{ path = "src", format = "sdist" }]
 exclude = ["**/test/*"]
 
 [tool.poetry.dev-dependencies]
-pylint = ">=2.17.1"
+pylint = "*"
 ruff = "*"
-pytest = ">=7.2.2"
-pytest-cov = ">=4.0.0"
+pytest = "*"
+pytest-cov = "*"
 mypy = "*"
 
 [tool.poetry.dependencies]
