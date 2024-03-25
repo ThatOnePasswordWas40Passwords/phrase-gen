@@ -1,10 +1,20 @@
+<div align="center">
+
 # phrasegen
 
-> Generated sliding window ngrams of specified custommizations over a given body of text.
->
-> Great for generating passphrase candidates with a focus on human memorization from a
-> given source material.
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+Generating sliding window ngrams of specified customizations over a given body of text.
+Great for generating passphrase candidates with a focus on human memorization from a
+given source material.
+
+<br/>
+
+[Why](#why) • [Getting started](#installation) •
+[Usage](#usage) • [FAQs, feedback, etc](#faqs)
+
+</div>
 
 ## Why
 
@@ -50,6 +60,7 @@ phrasegen --join-str "-" \
     --no-strip-punc \
     --lowercase
 ```
+
 Outputs to STDOUT:
 
 ```text
@@ -96,3 +107,7 @@ a-set-of
 set-of-passphrases
 of-passphrases-against.
 ```
+
+## FAQs
+
+Please submit an issue against this repo.
