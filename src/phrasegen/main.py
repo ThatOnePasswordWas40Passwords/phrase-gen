@@ -22,7 +22,7 @@ def valid_file(file_path: str) -> str:
     return file_path
 
 
-def _cli():
+def _cli() -> Namespace:
     parser = ArgumentParser(
         description="Generate ordered phrases from an input body of text.",
         add_help=True,
@@ -80,7 +80,7 @@ def _cli():
 
 
 def _find_ngrams(input_list: Sequence[str], n: int) -> Iterator[str]:
-    return zip(*[input_list[i:] for i in range(n)])
+    return zip(*[input_list[i:] for i in range(n)])  # type: ignore
 
 
 def gen_slices(
