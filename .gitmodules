@@ -1,0 +1,3 @@
+[submodule "t1pw40p-common"]
+	path = t1pw40p-common
+	url = ../t1pw40p-common
