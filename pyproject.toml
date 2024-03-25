@@ -1,0 +1,35 @@
+[tool.poetry]
+# distribution name
+name = "wordlist-phrase-gen"
+version = "0.0.0"
+description = "Generated ORDERED ngrams phrases from a given wordlist."
+authors = ["bigpick <bigpick>"]
+packages = [{ include = "phrasegen", from = "src" }]
+include = [{ path = "src", format = "sdist" }]
+exclude = ["**/test/*"]
+
+[tool.poetry.dev-dependencies]
+pylint = ">=2.17.1"
+ruff = "*"
+pytest = ">=7.2.2"
+pytest-cov = ">=4.0.0"
+mypy = "*"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4"
+
+[tool.poetry.scripts]
+phrasegen = "phrasegen.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = '--import-mode=importlib --cov-report term-missing --cov=obs_common_python -s'
+python_files = "*test*.py"
+markers = [
+    "integration: marks tests that have external dependencies (deselect with \"-m 'not integration'\")",
+]
+log_cli = true
+log_cli_level = "DEBUG"
