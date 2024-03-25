@@ -26,7 +26,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-addopts = '--import-mode=importlib --cov-report term-missing --cov=obs_common_python -s'
+addopts = '--import-mode=importlib --cov-report term-missing --cov=phrasegen -s'
 python_files = "*test*.py"
 markers = [
     "integration: marks tests that have external dependencies (deselect with \"-m 'not integration'\")",
