@@ -39,7 +39,7 @@ phrasegen -h
 ```
 
 e.g Generating passphrases from a movie script, of exactly 4 phrases each, joined by a
-`-` character, without having scrubbed any of the punctiation from the source material
+`-` character, without having scrubbed any of the punctuation from the source material
 before after joining, forcing all to lowercase, and storing in an output file `gen.txt`:
 
 ```bash
