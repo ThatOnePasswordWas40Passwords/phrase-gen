@@ -111,3 +111,7 @@ of-passphrases-against.
 ## FAQs
 
 Please submit an issue against this repo.
+
+## Developement
+
+See [DEVELOPMENT.md]
