@@ -48,11 +48,16 @@ def format_phrase(args: Namespace) -> Generator[str, None, None]:
         phrases from the source material.
     """
     for line in gen_slices(args.input if args.input else load_file(args.file), args):
-        p = (
-            args.join_str.join(line).lower()
-            if args.lowercase
-            else args.join_str.join(line)
-        )
+        if args.pascal_case:
+            line = [word.title() for word in line]
+
+        p = args.join_str.join(line)
+
+        if args.lowercase:
+            p = p.lower()
+        elif args.uppercase:
+            p = p.upper()
+
         if not args.no_strip_punc:
             p = p.translate(
                 str.maketrans("", "", args.strip_punc.replace(args.join_str, ""))

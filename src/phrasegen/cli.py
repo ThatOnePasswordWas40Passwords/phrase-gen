@@ -25,9 +25,6 @@ def _cli() -> Namespace:  # pyright: ignore
         add_help=True,
     )
     parser.add_argument(
-        "--lowercase", action="store_true", help="Force all output to be lowercase"
-    )
-    parser.add_argument(
         "--no-strip-punc",
         action="store_true",
         help="Don't remove all punctuation from source.",
@@ -58,6 +55,25 @@ def _cli() -> Namespace:  # pyright: ignore
             "Char/string to join the individual words from the source with. "
             + "By default, is ''"
         ),
+    )
+    capitalization = parser.add_mutually_exclusive_group(required=False)
+    capitalization.add_argument(
+        "--pascal-case",
+        action="store_true",
+        help="Force generated phrases to BeJoinedWithPascalCase",
+        default=False,
+    )
+    capitalization.add_argument(
+        "--lowercase",
+        action="store_true",
+        help="Force all output to be lowercase",
+        default=False,
+    )
+    capitalization.add_argument(
+        "--uppercase",
+        action="store_true",
+        help="Force all output to be uppercase",
+        default=False,
     )
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument(
