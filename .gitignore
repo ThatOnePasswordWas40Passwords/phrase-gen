@@ -1,3 +1,4 @@
+*.txt
 .direnv
 .python-root
 *.netrc
