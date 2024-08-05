@@ -62,9 +62,17 @@ def format_phrase(args: Namespace) -> Generator[str, None, None]:
             p = p.translate(
                 str.maketrans("", "", args.strip_punc.replace(args.join_str, ""))
             )
+
         if not p:
             continue
+
         yield p
+
+        if "’" in p:  # noqa: RUF001
+            yield p.replace("’", "'")  # noqa: RUF001
+
+        if "“" in p or "”" in p:
+            yield p.replace("“", '"').replace("”", '"')
 
 
 def main() -> None:
